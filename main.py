@@ -9,7 +9,7 @@ app = Flask(__name__)
 #     return render_template('index.html', title=title)
 
 @app.route('/')
-@app.route('/index/')
+@app.route('/index/<title>')
 def index(title="Миссия на марс"):
     return render_template('index.html', title=title)
 
