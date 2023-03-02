@@ -3,10 +3,10 @@ from flask import Flask, url_for, request, render_template
 app = Flask(__name__)
 
 
-# @app.route('/')
-# @app.route('/index/<title>')
-# def index(title="Миссия на марс"):
-#     return render_template('index.html', title=title)
+@app.route('/training/<prof>')
+def training(prof):
+    return render_template('training.html', prof=prof, title='Тренировки в полёте')
+
 
 @app.route('/')
 @app.route('/index/<title>')
