@@ -3,30 +3,41 @@ from flask import Flask, url_for, request, render_template
 app = Flask(__name__)
 
 
+# @app.route('/')
+# @app.route('/index/<title>')
+# def index(title="Миссия на марс"):
+#     return render_template('index.html', title=title)
+
 @app.route('/')
-def title():
-    return f"""<!doctype html>
-                 <html lang="en">
-                   <head>
-                     <meta charset="utf-8">
-                   </head>
-                   <body>
-                     <h2>Миссия Колонизация Марса</h2>
-                   </body>
-                 </html>"""
-
-
 @app.route('/index/')
-def index():
-    return f"""<!doctype html>
-                 <html lang="en">
-                   <head>
-                     <meta charset="utf-8">
-                   </head>
-                   <body>
-                     <h3>И на Марсе будут яблони цвести!</h3>
-                   </body>
-                 </html>"""
+def index(title="Миссия на марс"):
+    return render_template('index.html', title=title)
+
+
+# @app.route('/')
+# def title():
+#     return f"""<!doctype html>
+#                  <html lang="en">
+#                    <head>
+#                      <meta charset="utf-8">
+#                    </head>
+#                    <body>
+#                      <h2>Миссия Колонизация Марса</h2>
+#                    </body>
+#                  </html>"""
+#
+#
+# @app.route('/index/')
+# def index():
+#     return f"""<!doctype html>
+#                  <html lang="en">
+#                    <head>
+#                      <meta charset="utf-8">
+#                    </head>
+#                    <body>
+#                      <h3>И на Марсе будут яблони цвести!</h3>
+#                    </body>
+#                  </html>"""
 
 
 @app.route('/promotion')
