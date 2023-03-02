@@ -76,6 +76,17 @@ def image_mars():
                     </html>"""
 
 
+@app.route('/list_prof/')
+@app.route('/list_prof/<prof>')
+def list_prof(prof='ol'):
+    professions = ['инженер-исследователь', 'пилот', 'строитель', 'экзобиолог', 'врач',
+                   'инженер по терраформированию', 'климатолог',
+                   'специалист по радиационной защите', 'астрогеолог', 'гляциолог',
+                   'инженер жизнеобеспечения', 'метеоролог', 'оператор марсохода', 'киберинженер',
+                   'штурман', 'пилот дронов']
+    return render_template('list_prof.html', prof=prof, title='Список', professions=professions)
+
+
 @app.route('/results/<nickname>/<int:level>/<float:rating>')
 def results(nickname, level, rating):
     return f"""<!doctype html>
